@@ -43,13 +43,13 @@ public class PlayerBehaviour : MonoBehaviour {
 
         // Mathf.Clamp
         // work out the xValue based on the limits
-        float xValue = Mathf.Clamp(rb.position.x, xMin, xMax);
+        // float xValue = Mathf.Clamp(rb.position.x, xMin, xMax);
 
         /*
          * float xValue = Mathf.Clamp01(rb.position.x);
          */
         // keep position.x between two values
-        rb.position = new Vector2(xValue, rb.position.y);
+        // rb.position = new Vector2(xValue, rb.position.y);
 
 
 
