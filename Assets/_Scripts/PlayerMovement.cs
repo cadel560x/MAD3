@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public CharacterController2D controller;
+    public static float healthAmount = 2.5f;
 
     public float runSpeed = 40f;
 
@@ -33,6 +34,11 @@ public class PlayerMovement : MonoBehaviour
             crouch = false;
         }
 
+        if ( healthAmount <= 0 )
+        {
+            Destroy(gameObject);
+        }
+
     }
 
     void FixedUpdate()
@@ -41,4 +47,14 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(horizontalMove * Time.fixedDeltaTime, crouch, jump);
         jump = false;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag.Equals("Enemy"))
+        {
+            healthAmount -= 0.25f;
+            //Debug.Log(healthAmount);
+        }
+    }
+
 }
