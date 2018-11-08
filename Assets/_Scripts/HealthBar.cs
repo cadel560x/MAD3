@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour {
 
+    public static float healthAmount = 2.5f;
     Vector3 localScale;
 
 	// Use this for initialization
@@ -13,7 +14,8 @@ public class HealthBar : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        localScale.x = PlayerMovement.healthAmount;
+        // localScale.x = PlayerMovement.healthAmount;
+        localScale.x = healthAmount;
         transform.localScale = localScale;
 	}
 }

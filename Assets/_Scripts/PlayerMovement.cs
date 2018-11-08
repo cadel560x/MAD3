@@ -6,7 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public CharacterController2D controller;
-    public static float healthAmount = 2.5f;
+    //public static float healthAmount = 2.5f;
+    //public static int lives = 3;
 
     public float runSpeed = 40f;
 
@@ -34,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
             crouch = false;
         }
 
-        if ( healthAmount <= 0 )
+        if ( HealthBar.healthAmount <= 0 )
         {
             Destroy(gameObject);
         }
@@ -52,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Enemy"))
         {
-            healthAmount -= 0.25f;
+            HealthBar.healthAmount -= 0.25f;
             //Debug.Log(healthAmount);
         }
     }
