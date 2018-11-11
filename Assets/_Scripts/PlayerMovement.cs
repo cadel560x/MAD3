@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Enemy"))
         {
-            HealthBar.healthAmount -= 0.25f;
+            HealthBar.healthAmount -= 0.1f;
             //Debug.Log(healthAmount);
         }
     }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HealthBar : MonoBehaviour {
 
-    public static float healthAmount = 2.5f;
+    public static float healthAmount = 1f;
     Vector3 localScale;
 
 	// Use this for initialization
