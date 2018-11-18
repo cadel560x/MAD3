@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public CharacterController2D controller;
+    public InplayUIController inplayUIController;
     //public static float healthAmount = 2.5f;
     //public static int lives = 3;
 
@@ -14,6 +15,12 @@ public class PlayerMovement : MonoBehaviour
     float horizontalMove = 0f;
     bool jump = false;
     bool crouch = false;
+
+    private void Start()
+    {
+        //gameController = FindObjectOfType<GameController>();
+        //gameController = GameObject.FindObjectOfType<GameController>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -35,10 +42,10 @@ public class PlayerMovement : MonoBehaviour
             crouch = false;
         }
 
-        if ( HealthBar.healthAmount <= 0 )
-        {
-            Destroy(gameObject);
-        }
+        //if ( HealthBar.healthAmount <= 0 )
+        //{
+        //    Destroy(gameObject);
+        //}
 
     }
 
@@ -53,9 +60,19 @@ public class PlayerMovement : MonoBehaviour
     {
         if (collision.gameObject.tag.Equals("Enemy"))
         {
-            HealthBar.healthAmount -= 0.1f;
+            //HealthBar.healthAmount -= 0.1f;
+            inplayUIController.updateHealth();
+
+
             //Debug.Log(healthAmount);
         }
+    }
+
+    void Die()
+    {
+        // Death effects go here
+
+        Destroy(gameObject);
     }
 
 }

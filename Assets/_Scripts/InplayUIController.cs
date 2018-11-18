@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameController : MonoBehaviour {
-    public GameObject timeIsUp, restartButton, gameOver;
+public class InplayUIController : MonoBehaviour {
+    public GameObject timeIsUp, restartButton, gameOver, health, lives;
 
     public PlayerMovement player;
     public Transform startingPoint;
+    private HealthBar healthBar;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         startingPoint = GameObject.FindGameObjectWithTag("StartingPoint").transform;
+        // HealthBar healthBar = GameObject.FindObjectOfType<HealthBar>();
+        healthBar = health.GetComponentInChildren<HealthBar>();
+        //Debug.Log(healthBar);
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
 		if ( TimeLeft.timeLeft <= 0 )
         {
             Time.timeScale = 0;
@@ -41,6 +45,8 @@ public class GameController : MonoBehaviour {
                 // Game over
                 Time.timeScale = 0;
                 player.gameObject.SetActive(false);
+                health.gameObject.SetActive(false);
+                lives.gameObject.SetActive(false);
 
                 gameOver.gameObject.SetActive(true);
                 restartButton.gameObject.SetActive(true);
@@ -53,13 +59,21 @@ public class GameController : MonoBehaviour {
     {
         //Lives.lives -= 1;
         Time.timeScale = 1;
-        TimeLeft.timeLeft = 10f;
-        HealthBar.healthAmount = 2.5f;
+        TimeLeft.timeLeft = 30f;
+        //HealthBar.healthAmount = 1f;
+        healthBar.healthAmount = 1f;
 
         timeIsUp.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
         
         SceneManager.LoadScene("Level1");
 
+    }
+
+    public void updateHealth()
+    {
+        //HealthBar.healthAmount -= 0.1f;
+
+        healthBar.updateHealth();
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TimeLeft : MonoBehaviour {
 
     Text text;
-    public static float timeLeft = 10f;
+    public static float timeLeft = 30f;
 
 	// Use this for initialization
 	void Start () {
