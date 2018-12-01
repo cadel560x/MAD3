@@ -293,6 +293,47 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 137723064}
   m_CullTransparentMesh: 0
+--- !u!1 &336926038
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 336926039}
+  - component: {fileID: 336926040}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &336926039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336926038}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &336926040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 336926038}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e369940432e7ff645b67b75117bf6024, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startingPoint: {fileID: 1152290828}
 --- !u!1 &381799722
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +699,6 @@ MonoBehaviour:
   health: {fileID: 1961045722}
   lives: {fileID: 1606558863}
   player: {fileID: 1440227393}
-  startingPoint: {fileID: 0}
 --- !u!1 &906990725
 GameObject:
   m_ObjectHideFlags: 0
@@ -891,7 +931,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1333372476011584, guid: d9b4803b4f395414f8b01f6da9f9bd20, type: 2}
       propertyPath: m_Name
-      value: Coin (2)
+      value: Coin2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9b4803b4f395414f8b01f6da9f9bd20, type: 2}
@@ -1317,7 +1357,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1079787758074968, guid: 4b43269179520ae4d85822fea2b902a0, type: 2}
       propertyPath: m_Name
-      value: Waypoint (1)
+      value: Waypoint1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b43269179520ae4d85822fea2b902a0, type: 2}
@@ -1366,6 +1406,10 @@ Prefab:
     - target: {fileID: 4751648965448374, guid: d9b4803b4f395414f8b01f6da9f9bd20, type: 2}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1333372476011584, guid: d9b4803b4f395414f8b01f6da9f9bd20, type: 2}
+      propertyPath: m_Name
+      value: Coin3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9b4803b4f395414f8b01f6da9f9bd20, type: 2}
@@ -1607,6 +1651,10 @@ Prefab:
     - target: {fileID: 4909379168993746, guid: 4b43269179520ae4d85822fea2b902a0, type: 2}
       propertyPath: m_RootOrder
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079787758074968, guid: 4b43269179520ae4d85822fea2b902a0, type: 2}
+      propertyPath: m_Name
+      value: Waypoint2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b43269179520ae4d85822fea2b902a0, type: 2}
@@ -1985,7 +2033,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1333372476011584, guid: d9b4803b4f395414f8b01f6da9f9bd20, type: 2}
       propertyPath: m_Name
-      value: Coin (1)
+      value: Coin1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9b4803b4f395414f8b01f6da9f9bd20, type: 2}
@@ -2247,7 +2295,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453ba3790656c5d4b85ff6d330f03bba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthAmount: 1
 --- !u!1 &2127413053
 GameObject:
   m_ObjectHideFlags: 0

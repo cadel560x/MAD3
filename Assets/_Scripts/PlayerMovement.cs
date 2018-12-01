@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour, IMortal
 {
 
     public CharacterController2D controller;
-    public InplayUIController inplayUIController;
-    //public static float healthAmount = 2.5f;
+    public float runSpeed = 40f;
+
+    private InplayUIController inplayUIController;
+    //private GameController gameController;
+
+    public int health = 100;
     //public static int lives = 3;
 
-    public float runSpeed = 40f;
+    
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -18,8 +22,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        inplayUIController = FindObjectOfType<InplayUIController>();
         //gameController = FindObjectOfType<GameController>();
-        //gameController = GameObject.FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -61,18 +65,33 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.tag.Equals("Enemy"))
         {
             //HealthBar.healthAmount -= 0.1f;
-            inplayUIController.updateHealth();
+            //inplayUIController.updateHealth();
+            TakeDamage(10);
 
 
             //Debug.Log(healthAmount);
         }
     }
 
-    void Die()
+    public void Die()
     {
         // Death effects go here
-
+        // Fade out
         Destroy(gameObject);
+
+        // Stop everything, freeze scene
+        Lives.PlayerLives -= 1;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= (damage);
+        if (health <= 0)
+        {
+            Die();
+        }
+
+        inplayUIController.UpdateHealthBar(damage);
     }
 
 }

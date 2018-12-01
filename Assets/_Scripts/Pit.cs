@@ -17,11 +17,17 @@ public class Pit : MonoBehaviour {
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.name);
-        Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-        enemy.ChangeDirection();
+        //Debug.Log(collision.gameObject.name);
 
-        Destroy(collision.gameObject);
+        MonoBehaviour[] list = collision.gameObject.GetComponents<MonoBehaviour>();
+        foreach (MonoBehaviour mb in list)
+        {
+            if (mb is IMortal)
+            {
+                IMortal mortal = (IMortal)mb;
+                mortal.Die();
+            }
+        }
     }
 
 }

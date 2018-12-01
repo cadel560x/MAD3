@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class Enemy : MonoBehaviour {
+public class Enemy : MonoBehaviour, IMortal {
     public int health = 100;
+    public int damage = 40;
     public float moveSpeed = 2f;
-    Vector3 localScale;
+    private Vector3 localScale;
     private bool movingRight;
-    Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     public void TakeDamage(int damage)
     {
@@ -20,7 +19,7 @@ public class Enemy : MonoBehaviour {
         }
     }
 
-    void Die()
+    public void Die()
     {
         // Death effects go here
         
@@ -49,7 +48,7 @@ public class Enemy : MonoBehaviour {
         //}
     //}
 
-    void moveRight()
+    private void moveRight()
     {
         //Debug.Log("Inside enemy's moveRight");
         movingRight = true;
@@ -58,7 +57,7 @@ public class Enemy : MonoBehaviour {
         rb.velocity = new Vector2(localScale.x * moveSpeed, rb.velocity.y);
     }
 
-    void moveLeft()
+    private void moveLeft()
     {
         //Debug.Log("Inside enemy's moveLeft");
         movingRight = false;
