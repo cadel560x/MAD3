@@ -1874,10 +1874,19 @@ Prefab:
       propertyPath: m_RootOrder
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 114303298144160672, guid: d88cef78583f7e544bfc98130c7535e0,
+        type: 2}
+      propertyPath: feet
+      value: 
+      objectReference: {fileID: 2004274837}
+    - target: {fileID: 4635165380010420, guid: d88cef78583f7e544bfc98130c7535e0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 50021980006232936, guid: d88cef78583f7e544bfc98130c7535e0,
         type: 2}
-      propertyPath: m_BodyType
-      value: 1
+      propertyPath: m_CollisionDetection
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d88cef78583f7e544bfc98130c7535e0, type: 2}
@@ -2038,6 +2047,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9b4803b4f395414f8b01f6da9f9bd20, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &2004274837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1265871931125544, guid: d88cef78583f7e544bfc98130c7535e0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1881806308}
 --- !u!1 &2007779809
 GameObject:
   m_ObjectHideFlags: 0

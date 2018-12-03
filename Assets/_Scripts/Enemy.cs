@@ -8,6 +8,12 @@ public class Enemy : MonoBehaviour, IMortal {
     private bool movingRight;
     private Rigidbody2D rb;
 
+    //[SerializeField]
+    //private Collider2D headCollider;
+    //[SerializeField]
+    //private Collider2D bodyCollider;
+
+
     public void TakeDamage(int damage)
     {
         //Debug.Log("damage taken");
@@ -66,24 +72,31 @@ public class Enemy : MonoBehaviour, IMortal {
         rb.velocity = new Vector2(localScale.x * moveSpeed, rb.velocity.y);
     }
 
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    Debug.Log(collision.otherCollider.name);
-    //PlayerMovement player = collision.otherCollider.GetComponent<PlayerMovement>();
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Debug.Log(collision.otherCollider.name);
+        //PlayerMovement player = collision.otherCollider.GetComponent<PlayerMovement>();
 
-    //if ( player == null )
-    //{
-    //    movingRight = !movingRight;
-    //}
+        //if (player == null)
+        //{
+        //    movingRight = !movingRight;
+        //}
 
-    //    if ( collision.gameObject.tag.Equals("Player") )
-    //    {
-    //        movingRight = !movingRight;
+        //if (collision.gameObject.tag.Equals("Player"))
+        //{
+        //    movingRight = !movingRight;
 
-    //        transform.Rotate(0f, 180f, 0f);
-    //    }
+        //    transform.Rotate(0f, 180f, 0f);
+        //}
 
-    //}
+        if (collision.gameObject.tag.Equals("Player"))
+        {
+            PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
+            player.TakeDamage(10);
+        }
+
+
+    }
 
     public void ChangeDirection()
     {
@@ -99,6 +112,5 @@ public class Enemy : MonoBehaviour, IMortal {
             moveRight();
         }
     }
-
 
 }

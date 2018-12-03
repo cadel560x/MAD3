@@ -10,7 +10,8 @@ public class Bullet : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         rb.velocity = transform.right * speed;
-	}
+        Destroy(gameObject, 2f);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -20,14 +21,15 @@ public class Bullet : MonoBehaviour {
         if ( enemy != null )
         {
             enemy.TakeDamage(damage);
-        }
 
-        Destroy(gameObject);
+            Destroy(gameObject);
+        }
+        
     }
 
     private void Update()
     {
-        Destroy(gameObject, 2f);
+        //Destroy(gameObject, 2f);
     }
 
 }

@@ -60,18 +60,20 @@ public class PlayerMovement : MonoBehaviour, IMortal
         jump = false;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag.Equals("Enemy"))
-        {
-            //HealthBar.healthAmount -= 0.1f;
-            //inplayUIController.updateHealth();
-            TakeDamage(10);
+    //private void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (collision.gameObject.tag.Equals("Enemy"))
+    //    {
+            //Collider2D enemyCollider = collision.gameObject.GetComponent<Collider2D>();
+            //if (enemyCollider.name.Equals("bodyCollider")) {
+                //HealthBar.healthAmount -= 0.1f;
+                //inplayUIController.updateHealth();
+                //TakeDamage(10);
 
-
-            //Debug.Log(healthAmount);
-        }
-    }
+                //Debug.Log(healthAmount);
+            //}
+    //    }
+    //}
 
     public void Die()
     {

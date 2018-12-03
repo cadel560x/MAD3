@@ -9,14 +9,14 @@ public class Lives : MonoBehaviour {
     public static int PlayerLives {
         get { return lives; }
         set { lives = value;
-            if (lives < 1)
-            {
-                gameController.GameOver();
-            }
-            else
-            {
-                gameController.RestartScene();
-            }
+            //if (lives < 1)
+            //{
+            //    gameController.GameOver();
+            //}
+            //else
+            //{
+            //    gameController.RestartScene();
+            //}
 
             text.text = "x " + lives;
         }
@@ -26,6 +26,7 @@ public class Lives : MonoBehaviour {
     void Start () {
         text = GetComponent<Text>();
         text.text = "x " + lives;
+
         gameController = FindObjectOfType<GameController>();
     }
 	
