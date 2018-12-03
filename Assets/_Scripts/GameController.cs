@@ -48,6 +48,12 @@ public class GameController : MonoBehaviour {
         //}
     }
 
+    public void LevelCompleted()
+    {
+        Time.timeScale = 0;
+        inplayUIController.LevelCompleted();
+    }
+
     public void RestartScene()
     {
         //Lives.lives -= 1;
@@ -57,7 +63,7 @@ public class GameController : MonoBehaviour {
         //healthBar.healthAmount = 1f;
         player.health = 100;
 
-        inplayUIController.restartScene();
+        inplayUIController.RestartScene();
 
         //timeIsUp.gameObject.SetActive(false);
         //restartButton.gameObject.SetActive(false);

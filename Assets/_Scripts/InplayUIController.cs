@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class InplayUIController : MonoBehaviour {
-    public GameObject timeIsUp, restartButton, gameOver, health, lives;
+    public GameObject timeIsUp, restartButton, gameOver, health, lives, levelCompleted;
 
     public PlayerMovement player;
     
@@ -16,6 +16,11 @@ public class InplayUIController : MonoBehaviour {
         healthBar = health.GetComponentInChildren<HealthBar>();
         //Debug.Log(healthBar);
 
+    }
+
+    public void LevelCompleted()
+    {
+        levelCompleted.SetActive(true);
     }
 
     // Update is called once per frame
@@ -60,7 +65,7 @@ public class InplayUIController : MonoBehaviour {
         healthBar.updateHealth(amount);
     }
 
-    public void restartScene()
+    public void RestartScene()
     {
         timeIsUp.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
