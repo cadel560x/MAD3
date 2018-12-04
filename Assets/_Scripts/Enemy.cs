@@ -4,8 +4,9 @@ public class Enemy : MonoBehaviour, IMortal {
     public int health = 100;
     public int damage = 40;
     public float moveSpeed = 2f;
-    private Vector3 localScale;
     public bool movingRight;
+
+    private Vector3 localScale;
     private Rigidbody2D rb;
 
     //[SerializeField]

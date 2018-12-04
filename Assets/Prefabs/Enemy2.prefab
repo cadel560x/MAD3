@@ -28,6 +28,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1728248412212718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4725534163592284}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1862818784415178
 GameObject:
   m_ObjectHideFlags: 0
@@ -55,6 +70,7 @@ GameObject:
   - component: {fileID: 50135133826703060}
   - component: {fileID: 114764585447567636}
   - component: {fileID: 60971185731738010}
+  - component: {fileID: 114080083957397208}
   m_Layer: 11
   m_Name: Enemy2
   m_TagString: Enemy
@@ -74,6 +90,7 @@ Transform:
   m_Children:
   - {fileID: 4212839418201644}
   - {fileID: 4671866541470156}
+  - {fileID: 4725534163592284}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -102,6 +119,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4056245805887356}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4725534163592284
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1728248412212718}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.51, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4056245805887356}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50135133826703060
 Rigidbody2D:
@@ -176,6 +206,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1}
   m_EdgeRadius: 0
+--- !u!114 &114080083957397208
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1945169529945922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7934383db70c37f4a9df6690ea3389ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 4725534163592284}
+  enemyBulletPrefab: {fileID: 1534321479959620, guid: 077db5782d6a3b3479d33a13463fa2a8,
+    type: 2}
 --- !u!114 &114764585447567636
 MonoBehaviour:
   m_ObjectHideFlags: 1
