@@ -5,7 +5,7 @@ public class Enemy : MonoBehaviour, IMortal {
     public int damage = 40;
     public float moveSpeed = 2f;
     private Vector3 localScale;
-    private bool movingRight;
+    public bool movingRight;
     private Rigidbody2D rb;
 
     //[SerializeField]
@@ -36,8 +36,15 @@ public class Enemy : MonoBehaviour, IMortal {
 	void Start () {
         localScale = transform.localScale;
         rb = GetComponent<Rigidbody2D>();
-        movingRight = true;
-        localScale.x = 1;
+        if (movingRight)
+        {
+            localScale.x = 1;
+        }
+        else
+        {
+            localScale.x = -1;
+        }
+        //localScale.x = 1;
         transform.localScale = localScale;
         rb.velocity = new Vector2(localScale.x * moveSpeed, rb.velocity.y);
     }
@@ -100,7 +107,7 @@ public class Enemy : MonoBehaviour, IMortal {
 
     public void ChangeDirection()
     {
-        //Debug.Log("Inside enemy's change direction");
+        Debug.Log("Inside enemy's change direction, "+ gameObject.name);
         transform.Rotate(0f, 180f, 0f);
 
         if (movingRight)

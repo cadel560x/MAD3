@@ -18,8 +18,8 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        
+    }
 
     private void FixedUpdate()
     {
@@ -52,6 +52,7 @@ public class GameController : MonoBehaviour {
     {
         Time.timeScale = 0;
         inplayUIController.LevelCompleted();
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void RestartScene()
