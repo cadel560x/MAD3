@@ -62,20 +62,20 @@ public class InplayUIController : MonoBehaviour {
     {
         //HealthBar.healthAmount -= 0.1f;
 
-        healthBar.updateHealth(amount);
+        healthBar.UpdateHealth(amount);
     }
 
     public void ResetHealtBar()
     {
-        Debug.Log("Inside ResetHealtBar");
-        healthBar.resetHealthBar();
+        //Debug.Log("Inside ResetHealtBar");
+        healthBar.ResetHealthBar();
     }
 
     public void RestartScene()
     {
         timeIsUp.gameObject.SetActive(false);
         restartButton.gameObject.SetActive(false);
-        healthBar.resetHealthBar();
+        healthBar.ResetHealthBar();
     }
 
     public void TimesUp()

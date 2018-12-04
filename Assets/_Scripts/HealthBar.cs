@@ -21,7 +21,7 @@ public class HealthBar : MonoBehaviour {
         //transform.localScale = localScale;
 	//}
 
-    public void updateHealth(int amount)
+    public void UpdateHealth(int amount)
     {
         //PlayerMovement player = FindObjectOfType<PlayerMovement>();
 
@@ -40,9 +40,10 @@ public class HealthBar : MonoBehaviour {
         }
     }
 
-    public void resetHealthBar()
+    public void ResetHealthBar()
     {
-        localScale = originalTransform;
+        Debug.Log("Inside HelthBar.ResteHealthBar");
+        transform.localScale = originalTransform;
     }
 
 }
