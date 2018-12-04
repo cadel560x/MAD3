@@ -107,7 +107,7 @@ public class Enemy : MonoBehaviour, IMortal {
 
     public void ChangeDirection()
     {
-        Debug.Log("Inside enemy's change direction, "+ gameObject.name);
+        //Debug.Log("Inside enemy's change direction, "+ gameObject.name);
         transform.Rotate(0f, 180f, 0f);
 
         if (movingRight)

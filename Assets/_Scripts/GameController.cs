@@ -86,4 +86,14 @@ public class GameController : MonoBehaviour {
         inplayUIController.GameOver();
     }
 
+    public void HealthBoost(Medikit medikit)
+    {
+        if (player.health < 100)
+        {
+            player.health = 100;
+            inplayUIController.ResetHealtBar();
+            Destroy(medikit.gameObject);
+        }
+    }
+
 }

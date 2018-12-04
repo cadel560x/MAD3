@@ -7,7 +7,7 @@ public class Waypoint : MonoBehaviour
     {
         if ( collision.gameObject.CompareTag("Enemy") )
         {
-            Debug.Log(collision.gameObject.name);
+            //Debug.Log(collision.gameObject.name);
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
             enemy.ChangeDirection();
         }

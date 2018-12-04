@@ -57,12 +57,18 @@ public class InplayUIController : MonoBehaviour {
 
     // Out to a GameController
     
-
+    
     public void UpdateHealthBar(int amount)
     {
         //HealthBar.healthAmount -= 0.1f;
 
         healthBar.updateHealth(amount);
+    }
+
+    public void ResetHealtBar()
+    {
+        Debug.Log("Inside ResetHealtBar");
+        healthBar.resetHealthBar();
     }
 
     public void RestartScene()
