@@ -32,8 +32,8 @@ public class Enemy : MonoBehaviour, IMortal {
         Destroy(gameObject);
     }
 
-	//// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         localScale = transform.localScale;
         rb = GetComponent<Rigidbody2D>();
         if (movingRight)
