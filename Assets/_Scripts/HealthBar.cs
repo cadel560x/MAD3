@@ -42,7 +42,7 @@ public class HealthBar : MonoBehaviour {
 
     public void ResetHealthBar()
     {
-        Debug.Log("Inside HelthBar.ResteHealthBar");
+        //Debug.Log("Inside HelthBar.ResteHealthBar");
         transform.localScale = originalTransform;
     }
 
