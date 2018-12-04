@@ -119,6 +119,7 @@ public class Enemy : MonoBehaviour, IMortal {
         {
             moveRight();
         }
+
     }
 
 }

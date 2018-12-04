@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour, IMortal
     public float runSpeed = 40f;
 
     private InplayUIController inplayUIController;
-    //private GameController gameController;
+    private GameController gameController;
 
     public int health = 100;
     //public static int lives = 3;
@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour, IMortal
     private void Start()
     {
         inplayUIController = FindObjectOfType<InplayUIController>();
-        //gameController = FindObjectOfType<GameController>();
+        gameController = FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -79,10 +79,11 @@ public class PlayerMovement : MonoBehaviour, IMortal
     {
         // Death effects go here
         // Fade out
-        Destroy(gameObject);
+        gameController.DeadPlayer();
+        //Destroy(gameObject);
 
         // Stop everything, freeze scene
-        Lives.PlayerLives -= 1;
+        //Lives.PlayerLives -= 1;
     }
 
     public void TakeDamage(int damage)

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -71,6 +72,19 @@ public class GameController : MonoBehaviour {
 
         SceneManager.LoadScene("Level1");
 
+    }
+
+    public void DeadPlayer()
+    {
+        Lives.lives -= 1;
+        if ( Lives.lives < 1 )
+        {
+            GameOver();
+        }
+        else
+        {
+            RestartScene();
+        }
     }
 
     public void TimesUp()
