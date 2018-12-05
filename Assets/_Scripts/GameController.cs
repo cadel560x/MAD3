@@ -100,7 +100,8 @@ public class GameController : MonoBehaviour {
     {
         //Time.timeScale = 0;
         inplayUIController.TimesUp();
-        DeadPlayer();
+        //DeadPlayer();
+        player.GetComponent<PlayerDeath>().enabled = true;
     }
 
     public void GameOver()
@@ -119,16 +120,16 @@ public class GameController : MonoBehaviour {
         }
     }
 
-    IEnumerator SuspendTimeScale()
-    {
-        Time.timeScale = 0f;
-        float pauseTime = Time.realtimeSinceStartup + 4f;
-        while (Time.realtimeSinceStartup <  pauseTime)
-        {
-            yield return 0;
-        }
+    //IEnumerator SuspendTimeScale()
+    //{
+    //    Time.timeScale = 0f;
+    //    float pauseTime = Time.realtimeSinceStartup + 4f;
+    //    while (Time.realtimeSinceStartup <  pauseTime)
+    //    {
+    //        yield return 0;
+    //    }
 
-        Time.timeScale = 1f;
-    }
+    //    Time.timeScale = 1f;
+    //}
 
 }

@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour, IMortal
     //public static int lives = 3;
 
     private InplayUIController inplayUIController;
-    private GameController gameController;
+    //private GameController gameController;
     //private SpriteRenderer rend;
 
     float horizontalMove = 0f;
@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour, IMortal
     private void Start()
     {
         inplayUIController = FindObjectOfType<InplayUIController>();
-        gameController = FindObjectOfType<GameController>();
+        //gameController = FindObjectOfType<GameController>();
         //rend = GetComponent<SpriteRenderer>();
         //StartCoroutine("FadeOut");
     }

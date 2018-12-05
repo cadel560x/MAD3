@@ -28,7 +28,7 @@ public class PlayerDeath : MonoBehaviour {
         //while (pauseTime > Time.realtimeSinceStartup )
         //{
             
-            for (float f = 1; f > -0.05f; f -= 0.05f)
+            for (float f = 2f; f > -0.05f; f -= 0.025f)
             {
                 Color c = rend.material.color;
                 // 'a' is Alpha channel
@@ -41,7 +41,7 @@ public class PlayerDeath : MonoBehaviour {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
         //Time.timeScale = 1f;
-
+        //yield return new WaitForSeconds(2);
         //Debug.Log("Inside FadeOut");
         gameController.DeadPlayer();
 
