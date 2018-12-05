@@ -96,10 +96,13 @@ public class InplayUIController : MonoBehaviour {
         //player.gameObject.SetActive(false);
         //health.gameObject.SetActive(false);
         //lives.gameObject.SetActive(false);
+        gameOver.SetActive(true);
+        healthBar.ResetHealthBar();
         inplayUI.SetActive(false);
 
         //Debug.Log("Inside GameOver " + Time.timeScale);
-        gameOver.SetActive(true);
+        
+        
         //restartButton.gameObject.SetActive(true);
     }
 }

@@ -105,11 +105,15 @@ public class GameController : MonoBehaviour {
         inplayUIController.TimesUp();
         //DeadPlayer();
         player.GetComponent<PlayerDeath>().enabled = true;
+        player.health = 100;
+        FindObjectOfType<ScoreScript>().Score = 0;
     }
 
     public void GameOver()
     {
         Time.timeScale = 0;
+        TimeLeft.timeLeft = 30f;
+        Lives.PlayerLives = 3;
         inplayUIController.GameOver();
     }
 
