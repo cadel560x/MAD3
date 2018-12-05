@@ -74,21 +74,22 @@ public class InplayUIController : MonoBehaviour {
     public void RestartScene()
     {
         timeIsUp.gameObject.SetActive(false);
-        restartButton.gameObject.SetActive(false);
+        //restartButton.gameObject.SetActive(false);
+
         healthBar.ResetHealthBar();
     }
 
     public void TimesUp()
     {
         timeIsUp.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(true);
+        //restartButton.gameObject.SetActive(true);
     }
 
-    public void StartTimer()
-    {
-        timeIsUp.gameObject.SetActive(false);
-        restartButton.gameObject.SetActive(false);
-    }
+    //public void StartTimer()
+    //{
+        //timeIsUp.gameObject.SetActive(false);
+        //restartButton.gameObject.SetActive(false);
+    //}
 
     public void GameOver()
     {

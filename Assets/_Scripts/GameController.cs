@@ -58,8 +58,9 @@ public class GameController : MonoBehaviour {
 
     public void RestartScene()
     {
+        //StartCoroutine(SuspendTimeScale(5));
         //Lives.lives -= 1;
-        Time.timeScale = 1;
+        //Time.timeScale = 1;
         TimeLeft.timeLeft = 30f;
         //HealthBar.healthAmount = 1f;
         //healthBar.healthAmount = 1f;
@@ -70,14 +71,22 @@ public class GameController : MonoBehaviour {
         //timeIsUp.gameObject.SetActive(false);
         //restartButton.gameObject.SetActive(false);
 
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 
+        //Debug.Log("Inside RestartScene");
+        Time.timeScale = 1f;
     }
 
     public void DeadPlayer()
     {
-        Lives.lives -= 1;
-        if ( Lives.lives < 1 )
+        //Time.timeScale = 0;
+        //System.Threading.Thread.Sleep(2000);
+        //StartCoroutine("SuspendTimeScale");
+
+        //Lives.lives -= 1;
+        //if ( Lives.lives < 1 )
+        Lives.PlayerLives -= 1;
+        if (Lives.PlayerLives < 1)
         {
             GameOver();
         }
@@ -89,9 +98,9 @@ public class GameController : MonoBehaviour {
 
     public void TimesUp()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         inplayUIController.TimesUp();
-        Lives.PlayerLives -= 1;
+        DeadPlayer();
     }
 
     public void GameOver()
@@ -108,6 +117,18 @@ public class GameController : MonoBehaviour {
             inplayUIController.ResetHealtBar();
             Destroy(medikit.gameObject);
         }
+    }
+
+    IEnumerator SuspendTimeScale()
+    {
+        Time.timeScale = 0f;
+        float pauseTime = Time.realtimeSinceStartup + 4f;
+        while (Time.realtimeSinceStartup <  pauseTime)
+        {
+            yield return 0;
+        }
+
+        Time.timeScale = 1f;
     }
 
 }

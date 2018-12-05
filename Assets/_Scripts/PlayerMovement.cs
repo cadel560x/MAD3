@@ -7,14 +7,12 @@ public class PlayerMovement : MonoBehaviour, IMortal
 
     public CharacterController2D controller;
     public float runSpeed = 40f;
-
-    private InplayUIController inplayUIController;
-    private GameController gameController;
-
     public int health = 100;
     //public static int lives = 3;
 
-    
+    private InplayUIController inplayUIController;
+    private GameController gameController;
+    //private SpriteRenderer rend;
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -24,6 +22,8 @@ public class PlayerMovement : MonoBehaviour, IMortal
     {
         inplayUIController = FindObjectOfType<InplayUIController>();
         gameController = FindObjectOfType<GameController>();
+        //rend = GetComponent<SpriteRenderer>();
+        //StartCoroutine("FadeOut");
     }
 
     // Update is called once per frame
@@ -79,7 +79,9 @@ public class PlayerMovement : MonoBehaviour, IMortal
     {
         // Death effects go here
         // Fade out
-        gameController.DeadPlayer();
+        GetComponent<PlayerDeath>().enabled = true;
+
+        //gameController.DeadPlayer();
         //Destroy(gameObject);
 
         // Stop everything, freeze scene
@@ -96,5 +98,19 @@ public class PlayerMovement : MonoBehaviour, IMortal
 
         inplayUIController.UpdateHealthBar(damage);
     }
+
+    //IEnumerator FadeOut()
+    //{
+    //    Time.timeScale = 0f;
+
+    //    for (float f = 1; f > -0.05f; f -= 0.05f)
+    //    {
+    //        Color c = rend.material.color;
+    //        // 'a' is Alpha channel
+    //        c.a = f;
+    //        rend.material.color = c;
+    //        yield return new WaitForSeconds(0.05f);
+    //    }
+    //}
 
 }
