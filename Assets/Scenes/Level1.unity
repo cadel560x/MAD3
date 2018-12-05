@@ -2587,6 +2587,7 @@ GameObject:
   - component: {fileID: 1522829295}
   - component: {fileID: 1522829294}
   - component: {fileID: 1522829296}
+  - component: {fileID: 1522829297}
   m_Layer: 0
   m_Name: FinishLine
   m_TagString: Untagged
@@ -2641,6 +2642,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1718e27038d2200469640b99bd9403ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1522829297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1522829293}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a443e6fd5b0357479efeebd20ad34c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1556415677

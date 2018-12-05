@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour {
 
     private InplayUIController inplayUIController;
     private PlayerMovement player;
+    private ScoreScript scoreScript;
     private int initialScore;
 
     // Use this for initialization
@@ -16,7 +17,8 @@ public class GameController : MonoBehaviour {
         startingPoint = GameObject.FindGameObjectWithTag("StartingPoint").transform;
         inplayUIController = FindObjectOfType<InplayUIController>();
         player = FindObjectOfType<PlayerMovement>();
-        initialScore = FindObjectOfType<ScoreScript>().Score;
+        scoreScript = FindObjectOfType<ScoreScript>();
+        initialScore = scoreScript.Score;
     }
 	
 	// Update is called once per frame
@@ -55,6 +57,10 @@ public class GameController : MonoBehaviour {
     {
         Time.timeScale = 0;
         inplayUIController.LevelCompleted();
+        scoreScript.Score *= (int)TimeLeft.timeLeft;
+        FinishLine finishLine = FindObjectOfType<FinishLine>();
+        finishLine.GetComponent<NextLevel>().enabled = true;
+
         // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
@@ -67,7 +73,7 @@ public class GameController : MonoBehaviour {
         //HealthBar.healthAmount = 1f;
         //healthBar.healthAmount = 1f;
         player.health = 100;
-        FindObjectOfType<ScoreScript>().Score = initialScore;
+        scoreScript.Score = initialScore;
 
         inplayUIController.RestartScene();
 
@@ -106,7 +112,7 @@ public class GameController : MonoBehaviour {
         //DeadPlayer();
         player.GetComponent<PlayerDeath>().enabled = true;
         player.health = 100;
-        FindObjectOfType<ScoreScript>().Score = 0;
+        scoreScript.Score = 0;
     }
 
     public void GameOver()
