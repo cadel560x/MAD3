@@ -9,12 +9,14 @@ public class GameController : MonoBehaviour {
 
     private InplayUIController inplayUIController;
     private PlayerMovement player;
+    private int initialScore;
 
     // Use this for initialization
     void Start () {
         startingPoint = GameObject.FindGameObjectWithTag("StartingPoint").transform;
         inplayUIController = FindObjectOfType<InplayUIController>();
         player = FindObjectOfType<PlayerMovement>();
+        initialScore = FindObjectOfType<ScoreScript>().Score;
     }
 	
 	// Update is called once per frame
@@ -65,6 +67,7 @@ public class GameController : MonoBehaviour {
         //HealthBar.healthAmount = 1f;
         //healthBar.healthAmount = 1f;
         player.health = 100;
+        FindObjectOfType<ScoreScript>().Score = initialScore;
 
         inplayUIController.RestartScene();
 

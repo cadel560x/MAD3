@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class InplayUIController : MonoBehaviour {
-    public GameObject timeIsUp, restartButton, gameOver, health, lives, levelCompleted;
+    public GameObject timeIsUp, gameOver, health, lives, levelCompleted, inplayUI;
 
     public PlayerMovement player;
     
@@ -93,11 +93,13 @@ public class InplayUIController : MonoBehaviour {
 
     public void GameOver()
     {
-        player.gameObject.SetActive(false);
-        health.gameObject.SetActive(false);
-        lives.gameObject.SetActive(false);
+        //player.gameObject.SetActive(false);
+        //health.gameObject.SetActive(false);
+        //lives.gameObject.SetActive(false);
+        inplayUI.SetActive(false);
 
-        gameOver.gameObject.SetActive(true);
-        restartButton.gameObject.SetActive(true);
+        //Debug.Log("Inside GameOver " + Time.timeScale);
+        gameOver.SetActive(true);
+        //restartButton.gameObject.SetActive(true);
     }
 }
