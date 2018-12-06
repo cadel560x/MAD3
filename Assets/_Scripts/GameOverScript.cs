@@ -16,6 +16,7 @@ public class GameOverScript : MonoBehaviour {
         soundController = SoundController.FindSoundController();
         if (soundController)
         {
+            soundController.StopMusic();
             soundController.PlayOneShot(gameOverClip);
         }
     }
