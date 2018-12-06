@@ -40,7 +40,7 @@ public class Stomp : MonoBehaviour {
 
             if (soundController)
             {
-                soundController.PlayOneShot(jumpClip);
+                soundController.PlayOneShot(stompClip);
             }
 
             StartCoroutine(EnemySquished(2));

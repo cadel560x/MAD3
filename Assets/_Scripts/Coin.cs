@@ -6,9 +6,16 @@ public class Coin : MonoBehaviour {
 
     private ScoreScript scoreScript;
 
+    private SoundController soundController;
+
+    [SerializeField]
+    private AudioClip coinClip;
+
     private void Start()
     {
         scoreScript = FindObjectOfType<ScoreScript>();
+
+        soundController = FindObjectOfType<SoundController>();
     }
 
     //private void OnCollisionEnter2D(Collision2D collision)
@@ -26,7 +33,15 @@ public class Coin : MonoBehaviour {
         if (collision.gameObject.tag.Equals("Player"))
         {
             scoreScript.Score += value;
+
+            if (soundController)
+            {
+                soundController.PlayOneShot(coinClip);
+            }
+
             Destroy(gameObject);
         }
+
+        
     }
 }
