@@ -20,7 +20,7 @@ public class Stomp : MonoBehaviour {
         enemyScale = enemy.transform.localScale;
         enemyRB = enemy.GetComponent<Rigidbody2D>();
 
-        soundController = FindObjectOfType<SoundController>();
+        soundController = SoundController.FindSoundController();
     }
 
     public void OnCollisionEnter2D(Collision2D collision)

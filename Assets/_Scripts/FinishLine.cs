@@ -13,7 +13,7 @@ public class FinishLine : MonoBehaviour {
     private void Start()
     {
         gameController = FindObjectOfType<GameController>();
-        soundController = FindObjectOfType<SoundController>();
+        soundController = SoundController.FindSoundController();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +22,7 @@ public class FinishLine : MonoBehaviour {
         {
             if (soundController)
             {
+                soundController.StopMusic();
                 soundController.PlayOneShot(levelCompletedClip);
             }
 

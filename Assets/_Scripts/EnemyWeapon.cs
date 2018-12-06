@@ -21,7 +21,7 @@ public class EnemyWeapon : MonoBehaviour {
     {
         //Debug.Log("Inside EnemyWeapon.Start()");
         player = FindObjectOfType<PlayerMovement>();
-        soundController = FindObjectOfType<SoundController>();
+        soundController = SoundController.FindSoundController();
         enemy = GetComponentInParent<Enemy>();
         enemyRB = enemy.GetComponent<Rigidbody2D>();
         InvokeRepeating("Shoot", 0f, 1f);

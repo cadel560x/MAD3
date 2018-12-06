@@ -16,7 +16,7 @@ public class PlayerDeath : MonoBehaviour {
     void Start () {
         rend = GetComponentInParent<SpriteRenderer>();
         gameController = FindObjectOfType<GameController>();
-        soundController = FindObjectOfType<SoundController>();
+        soundController = SoundController.FindSoundController();
 
         if (soundController)
         {

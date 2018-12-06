@@ -15,7 +15,7 @@ public class Coin : MonoBehaviour {
     {
         scoreScript = FindObjectOfType<ScoreScript>();
 
-        soundController = FindObjectOfType<SoundController>();
+        soundController = SoundController.FindSoundController();
     }
 
     //private void OnCollisionEnter2D(Collision2D collision)

@@ -21,7 +21,7 @@ public class GameController : MonoBehaviour {
     void Start () {
         startingPoint = GameObject.FindGameObjectWithTag("StartingPoint").transform;
         inplayUIController = FindObjectOfType<InplayUIController>();
-        soundController = FindObjectOfType<SoundController>();
+        soundController = SoundController.FindSoundController();
         player = FindObjectOfType<PlayerMovement>();
         scoreScript = FindObjectOfType<ScoreScript>();
         initialScore = scoreScript.Score;

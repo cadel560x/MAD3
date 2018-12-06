@@ -13,7 +13,7 @@ public class GameOverScript : MonoBehaviour {
     void Start () {
         StartCoroutine("GameOverTimeout");
 
-        soundController = FindObjectOfType<SoundController>();
+        soundController = SoundController.FindSoundController();
         if (soundController)
         {
             soundController.PlayOneShot(gameOverClip);

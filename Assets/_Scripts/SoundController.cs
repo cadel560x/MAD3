@@ -25,6 +25,21 @@ public class SoundController : MonoBehaviour
         }
     }
 
+    public void StopMusic()
+    {
+        audioSource.Stop();
+    }
+
+    public void PauseMusic()
+    {
+        audioSource.Pause();
+    }
+
+    public void ResumeMusic()
+    {
+        audioSource.Play();
+    }
+
     public static SoundController FindSoundController()
     {
         var soundController = FindObjectOfType<SoundController>();

@@ -28,7 +28,7 @@ public class PlayerMovement : MonoBehaviour, IMortal
         //gameController = FindObjectOfType<GameController>();
         //rend = GetComponent<SpriteRenderer>();
         //StartCoroutine("FadeOut");
-        soundController = FindObjectOfType<SoundController>();
+        soundController = SoundController.FindSoundController();
     }
 
     // Update is called once per frame

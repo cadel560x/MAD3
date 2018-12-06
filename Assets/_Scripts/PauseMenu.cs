@@ -9,9 +9,15 @@ public class PauseMenu : MonoBehaviour {
     public GameObject pauseBackground;
     public GameObject inplayUI;
 
+    private SoundController soundController;
+
+    [SerializeField]
+    private AudioClip clickClip;
+
+
     private void Start()
     {
-        
+        soundController = SoundController.FindSoundController();
     }
 
     // Update is called once per frame
@@ -36,6 +42,11 @@ public class PauseMenu : MonoBehaviour {
         inplayUI.SetActive(true);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        if (soundController)
+        {
+            soundController.PlayOneShot(clickClip);
+            soundController.ResumeMusic();
+        }
     }
 
     void Pause()
@@ -45,17 +56,32 @@ public class PauseMenu : MonoBehaviour {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        if (soundController)
+        {
+            soundController.PlayOneShot(clickClip);
+            soundController.PauseMusic();
+        }
     }
 
     public void Restart()
     {
         Time.timeScale = 1f;
         TimeLeft.timeLeft = 30f;
+        if (soundController)
+        {
+            soundController.PlayOneShot(clickClip);
+            soundController.StopMusic();
+        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void Exit()
     {
+        if (soundController)
+        {
+            soundController.PlayOneShot(clickClip);
+            soundController.StopMusic();
+        }
         //Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }

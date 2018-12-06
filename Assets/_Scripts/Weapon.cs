@@ -12,7 +12,7 @@ public class Weapon : MonoBehaviour {
 
     private void Start()
     {
-        soundController = FindObjectOfType<SoundController>();
+        soundController = SoundController.FindSoundController();
     }
 
     // Update is called once per frame
