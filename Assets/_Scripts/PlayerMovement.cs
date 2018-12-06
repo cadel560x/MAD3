@@ -13,6 +13,10 @@ public class PlayerMovement : MonoBehaviour, IMortal
     private InplayUIController inplayUIController;
     //private GameController gameController;
     //private SpriteRenderer rend;
+    private SoundController soundController;
+
+    [SerializeField]
+    private AudioClip jumpClip;
 
     float horizontalMove = 0f;
     bool jump = false;
@@ -24,6 +28,7 @@ public class PlayerMovement : MonoBehaviour, IMortal
         //gameController = FindObjectOfType<GameController>();
         //rend = GetComponent<SpriteRenderer>();
         //StartCoroutine("FadeOut");
+        soundController = FindObjectOfType<SoundController>();
     }
 
     // Update is called once per frame
@@ -35,6 +40,11 @@ public class PlayerMovement : MonoBehaviour, IMortal
         if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+            if (soundController)
+            {
+                soundController.PlayOneShot(jumpClip);
+            }
+
         }
 
         if (Input.GetButtonDown("Crouch"))

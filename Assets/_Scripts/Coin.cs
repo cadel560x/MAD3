@@ -2,6 +2,8 @@
 using UnityEngine;
 
 public class Coin : MonoBehaviour {
+    public int value;
+
     private ScoreScript scoreScript;
 
     private void Start()
@@ -23,7 +25,7 @@ public class Coin : MonoBehaviour {
     {
         if (collision.gameObject.tag.Equals("Player"))
         {
-            scoreScript.Score += 10;
+            scoreScript.Score += value;
             Destroy(gameObject);
         }
     }

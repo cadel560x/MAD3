@@ -9,11 +9,18 @@ public class Stomp : MonoBehaviour {
 
     public GameObject feet;
 
+    private SoundController soundController;
+
+    [SerializeField]
+    private AudioClip stompClip;
+
     void Start()
     {
         enemy = GetComponentInParent<Enemy>();
         enemyScale = enemy.transform.localScale;
         enemyRB = enemy.GetComponent<Rigidbody2D>();
+
+        soundController = FindObjectOfType<SoundController>();
     }
 
     public void OnCollisionEnter2D(Collision2D collision)
@@ -30,6 +37,11 @@ public class Stomp : MonoBehaviour {
             enemy.transform.position = feet.transform.position;
             GetComponent<BoxCollider2D>().enabled = false;
             enemy.GetComponent<PolygonCollider2D>().enabled = false;
+
+            if (soundController)
+            {
+                soundController.PlayOneShot(jumpClip);
+            }
 
             StartCoroutine(EnemySquished(2));
         }
