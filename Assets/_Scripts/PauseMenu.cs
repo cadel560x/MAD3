@@ -14,10 +14,13 @@ public class PauseMenu : MonoBehaviour {
     [SerializeField]
     private AudioClip clickClip;
 
+    //private GameController gameController;
+
 
     private void Start()
     {
         soundController = SoundController.FindSoundController();
+        //gameController = FindObjectOfType<GameController>();
     }
 
     // Update is called once per frame
@@ -42,11 +45,11 @@ public class PauseMenu : MonoBehaviour {
         inplayUI.SetActive(true);
         Time.timeScale = 1f;
         GameIsPaused = false;
-        if (soundController)
-        {
-            soundController.PlayOneShot(clickClip);
-            soundController.ResumeMusic();
-        }
+        //if (soundController)
+        //{
+        //    soundController.PlayOneShot(clickClip);
+        //    soundController.ResumeMusic();
+        //}
     }
 
     void Pause()
@@ -67,11 +70,11 @@ public class PauseMenu : MonoBehaviour {
     {
         Time.timeScale = 1f;
         TimeLeft.timeLeft = 30f;
-        if (soundController)
-        {
-            soundController.PlayOneShot(clickClip);
-            soundController.StopMusic();
-        }
+        //if (soundController)
+        //{
+        //    soundController.PlayOneShot(clickClip);
+        //    soundController.StopMusic();
+        //}
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -79,10 +82,17 @@ public class PauseMenu : MonoBehaviour {
     {
         if (soundController)
         {
-            soundController.PlayOneShot(clickClip);
+            //soundController.PlayOneShot(clickClip);
             soundController.StopMusic();
         }
-        //Time.timeScale = 1f;
+
+        TimeLeft.timeLeft = 30f;
+        FindObjectOfType<PlayerMovement>().health = 100;
+        //FindObjectOfType<ScoreScript>().Score = 0;
+        FindObjectOfType<InplayUIController>().RestartScene();
+
+        Time.timeScale = 1f;
+        //gameController.RestartScene();
         SceneManager.LoadScene("Menu");
     }
 }
