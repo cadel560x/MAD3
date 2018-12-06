@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class SoundController : MonoBehaviour
 {
+    public static float volume = 0.5f;
+
 
     // == fields ==
     private AudioSource audioSource;
@@ -14,6 +16,14 @@ public class SoundController : MonoBehaviour
     private void Start()
     {
         audioSource = GetComponent<AudioSource>();
+        audioSource.volume = volume;
+    }
+
+    void Update()
+    {
+
+        // Setting volume option of Audio Source to be equal to musicVolume
+        audioSource.volume = volume;
     }
 
     // == public methods ==
@@ -40,6 +50,11 @@ public class SoundController : MonoBehaviour
         audioSource.Play();
     }
 
+    public void SetVolume(float vol)
+    {
+        volume = vol;
+    }
+
     public static SoundController FindSoundController()
     {
         var soundController = FindObjectOfType<SoundController>();
@@ -49,4 +64,5 @@ public class SoundController : MonoBehaviour
         }
         return soundController;
     }
+
 }
