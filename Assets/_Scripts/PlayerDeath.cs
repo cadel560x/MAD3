@@ -41,7 +41,7 @@ public class PlayerDeath : MonoBehaviour {
         //while (pauseTime > Time.realtimeSinceStartup )
         //{
             
-            for (float f = 1.5f; f > -0.05f; f -= 0.05f)
+            for (float f = 1.8f; f > -0.05f; f -= 0.05f)
             {
                 Color c = rend.material.color;
                 // 'a' is Alpha channel

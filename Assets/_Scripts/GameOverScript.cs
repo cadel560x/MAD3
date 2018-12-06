@@ -4,11 +4,21 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GameOverScript : MonoBehaviour {
+    private SoundController soundController;
 
-	// Use this for initialization
-	void Start () {
+    [SerializeField]
+    private AudioClip gameOverClip;
+
+    // Use this for initialization
+    void Start () {
         StartCoroutine("GameOverTimeout");
-	}
+
+        soundController = FindObjectOfType<SoundController>();
+        if (soundController)
+        {
+            soundController.PlayOneShot(gameOverClip);
+        }
+    }
 	
 	// Update is called once per frame
 	void Update () {

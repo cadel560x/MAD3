@@ -2112,6 +2112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb76ec4412a89ae428d69b8fcae66cc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOverClip: {fileID: 8300000, guid: 0fd4753d432974f4699a7ce10fdeff86, type: 3}
 --- !u!114 &1387090692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2665,6 +2666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1718e27038d2200469640b99bd9403ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelCompletedClip: {fileID: 8300000, guid: 5926d144d5751624e9d14381be294114, type: 3}
 --- !u!114 &1522829297
 MonoBehaviour:
   m_ObjectHideFlags: 0
