@@ -16,11 +16,16 @@ public class PauseMenu : MonoBehaviour {
 
     //private GameController gameController;
 
+    private TimeLeft timeLeft;
+    private float initialTime;
 
     private void Start()
     {
         soundController = SoundController.FindSoundController();
         //gameController = FindObjectOfType<GameController>();
+
+        timeLeft = FindObjectOfType<TimeLeft>();
+        //initialTime = timeLeft.timeLeft;
     }
 
     // Update is called once per frame
@@ -68,17 +73,15 @@ public class PauseMenu : MonoBehaviour {
 
     public void Restart()
     {
-        
-        TimeLeft.timeLeft = 30f;
         //if (soundController)
         //{
         //    soundController.PlayOneShot(clickClip);
         //    soundController.StopMusic();
         //}
-        TimeLeft.timeLeft = 30f;
+        timeLeft.timeLeft = 30f;
         FindObjectOfType<PlayerMovement>().health = 100;
         Lives.PlayerLives = 3;
-        //FindObjectOfType<ScoreScript>().Score = 0;
+        ScoreScript.scoreValue = 0;
 
         FindObjectOfType<InplayUIController>().RestartScene();
 
@@ -95,10 +98,10 @@ public class PauseMenu : MonoBehaviour {
             soundController.StopMusic();
         }
 
-        TimeLeft.timeLeft = 30f;
+        timeLeft.timeLeft = 30f;
         FindObjectOfType<PlayerMovement>().health = 100;
         Lives.PlayerLives = 3;
-        //FindObjectOfType<ScoreScript>().Score = 0;
+        ScoreScript.scoreValue = 0;
         FindObjectOfType<InplayUIController>().RestartScene();
 
         Time.timeScale = 1f;

@@ -13,18 +13,28 @@ public class GameController : MonoBehaviour {
     [SerializeField]
     private AudioClip medikitClip;
 
+
+    private TimeLeft timeLeft;
+    private float initialTime;
     private PlayerMovement player;
     private ScoreScript scoreScript;
     private int initialScore;
+    
 
     // Use this for initialization
     void Start () {
         startingPoint = GameObject.FindGameObjectWithTag("StartingPoint").transform;
         inplayUIController = FindObjectOfType<InplayUIController>();
         soundController = SoundController.FindSoundController();
+
+        timeLeft = FindObjectOfType<TimeLeft>();
+        initialTime = timeLeft.timeLeft;
+
         player = FindObjectOfType<PlayerMovement>();
+
         scoreScript = FindObjectOfType<ScoreScript>();
         initialScore = scoreScript.Score;
+        
     }
 	
 	// Update is called once per frame
@@ -63,7 +73,7 @@ public class GameController : MonoBehaviour {
     {
         Time.timeScale = 0;
         inplayUIController.LevelCompleted();
-        scoreScript.Score *= (int)TimeLeft.timeLeft;
+        scoreScript.Score *= (int)timeLeft.timeLeft;
         FinishLine finishLine = FindObjectOfType<FinishLine>();
         finishLine.GetComponent<NextLevel>().enabled = true;
 
@@ -75,7 +85,7 @@ public class GameController : MonoBehaviour {
         //StartCoroutine(SuspendTimeScale(5));
         //Lives.lives -= 1;
         //Time.timeScale = 1;
-        TimeLeft.timeLeft = 30f;
+        timeLeft.timeLeft = initialTime;
         //HealthBar.healthAmount = 1f;
         //healthBar.healthAmount = 1f;
         player.health = 100;
@@ -124,7 +134,7 @@ public class GameController : MonoBehaviour {
     public void GameOver()
     {
         Time.timeScale = 0;
-        TimeLeft.timeLeft = 30f;
+        timeLeft.timeLeft = 30f;
         Lives.PlayerLives = 3;
         inplayUIController.GameOver();
     }

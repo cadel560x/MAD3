@@ -1017,6 +1017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 533042565f4afb84fa3b9a4822812a93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLeft: 30
 --- !u!114 &601734964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2535,7 +2536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a983fe27fe7bef4abf1e1c02800a24f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreValue: 0
   text: {fileID: 0}
 --- !u!1 &1522829293
 GameObject:
