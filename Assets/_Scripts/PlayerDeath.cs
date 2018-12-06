@@ -6,10 +6,23 @@ using UnityEngine.SceneManagement;
 public class PlayerDeath : MonoBehaviour {
     SpriteRenderer rend;
     GameController gameController;
-	// Use this for initialization
-	void Start () {
+
+    private SoundController soundController;
+
+    [SerializeField]
+    private AudioClip playerDeathClip;
+
+    // Use this for initialization
+    void Start () {
         rend = GetComponentInParent<SpriteRenderer>();
         gameController = FindObjectOfType<GameController>();
+        soundController = FindObjectOfType<SoundController>();
+
+        if (soundController)
+        {
+            soundController.PlayOneShot(playerDeathClip);
+        }
+
         StartCoroutine("FadeOut");
     }
 	
@@ -28,7 +41,7 @@ public class PlayerDeath : MonoBehaviour {
         //while (pauseTime > Time.realtimeSinceStartup )
         //{
             
-            for (float f = 2f; f > -0.05f; f -= 0.025f)
+            for (float f = 1.5f; f > -0.05f; f -= 0.05f)
             {
                 Color c = rend.material.color;
                 // 'a' is Alpha channel

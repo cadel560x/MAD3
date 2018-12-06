@@ -12,10 +12,16 @@ public class EnemyWeapon : MonoBehaviour {
     private Vector3 enemyDirection;
     private Rigidbody2D enemyRB;
 
+    private SoundController soundController;
+
+    [SerializeField]
+    private AudioClip enemyShotClip;
+
     private void Start()
     {
         //Debug.Log("Inside EnemyWeapon.Start()");
         player = FindObjectOfType<PlayerMovement>();
+        soundController = FindObjectOfType<SoundController>();
         enemy = GetComponentInParent<Enemy>();
         enemyRB = enemy.GetComponent<Rigidbody2D>();
         InvokeRepeating("Shoot", 0f, 1f);
@@ -74,6 +80,10 @@ public class EnemyWeapon : MonoBehaviour {
         if ((enemyDirection.x > 0 && player.transform.position.x > transform.position.x)
             || (enemyDirection.x < 0 && player.transform.position.x < transform.position.x))
         {
+            if (soundController)
+            {
+                soundController.PlayOneShot(enemyShotClip);
+            }
             Instantiate(enemyBulletPrefab, firePoint.position, firePoint.rotation);
         }
 

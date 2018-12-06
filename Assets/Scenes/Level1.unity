@@ -2057,6 +2057,11 @@ Prefab:
       propertyPath: stompClip
       value: 
       objectReference: {fileID: 8300000, guid: d4337bf6bbbc2c74abd6a1f801f2d3f8, type: 3}
+    - target: {fileID: 114080083957397208, guid: 674708b932f62114d8bcf15ee9d44e46,
+        type: 2}
+      propertyPath: enemyShotClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5070b3f83301d064ba06dafc6f2f4a72, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 674708b932f62114d8bcf15ee9d44e46, type: 2}
   m_IsPrefabAsset: 0
@@ -2076,6 +2081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9f4477bf1891a64a9541af6386dbd8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerDeathClip: {fileID: 8300000, guid: f6acb639e8704ba45b4b168d058e8dc8, type: 3}
 --- !u!1 &1387090690
 GameObject:
   m_ObjectHideFlags: 0
