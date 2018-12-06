@@ -13,6 +13,10 @@ public class Enemy : MonoBehaviour, IMortal {
     //private Collider2D headCollider;
     //[SerializeField]
     //private Collider2D bodyCollider;
+    private SoundController soundController;
+
+    [SerializeField]
+    private AudioClip bumpClip;
 
 
     public void TakeDamage(int damage)
@@ -48,6 +52,9 @@ public class Enemy : MonoBehaviour, IMortal {
         //localScale.x = 1;
         transform.localScale = localScale;
         rb.velocity = new Vector2(localScale.x * moveSpeed, rb.velocity.y);
+
+        soundController = SoundController.FindSoundController();
+
     }
 	
 	// Update is called once per frame
@@ -99,6 +106,10 @@ public class Enemy : MonoBehaviour, IMortal {
 
         if (collision.gameObject.tag.Equals("Player"))
         {
+            if (soundController)
+            {
+                soundController.PlayOneShot(bumpClip);
+            }
             PlayerMovement player = collision.gameObject.GetComponent<PlayerMovement>();
             player.TakeDamage(10);
         }

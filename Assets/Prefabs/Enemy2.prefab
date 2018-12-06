@@ -220,6 +220,7 @@ MonoBehaviour:
   firePoint: {fileID: 4725534163592284}
   enemyBulletPrefab: {fileID: 1534321479959620, guid: 077db5782d6a3b3479d33a13463fa2a8,
     type: 2}
+  enemyShotClip: {fileID: 8300000, guid: 5070b3f83301d064ba06dafc6f2f4a72, type: 3}
 --- !u!114 &114764585447567636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,6 +236,7 @@ MonoBehaviour:
   damage: 60
   moveSpeed: 3
   movingRight: 1
+  bumpClip: {fileID: 8300000, guid: 261f3b523b937a84296fb641124a6535, type: 3}
 --- !u!114 &114826283069845524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -247,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   feet: {fileID: 1862818784415178}
+  stompClip: {fileID: 8300000, guid: d4337bf6bbbc2c74abd6a1f801f2d3f8, type: 3}
 --- !u!212 &212387727498641802
 SpriteRenderer:
   m_ObjectHideFlags: 1

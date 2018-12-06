@@ -206,6 +206,7 @@ MonoBehaviour:
   damage: 40
   moveSpeed: 2
   movingRight: 0
+  bumpClip: {fileID: 8300000, guid: 261f3b523b937a84296fb641124a6535, type: 3}
 --- !u!212 &212441884233431890
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -68,13 +68,22 @@ public class PauseMenu : MonoBehaviour {
 
     public void Restart()
     {
-        Time.timeScale = 1f;
+        
         TimeLeft.timeLeft = 30f;
         //if (soundController)
         //{
         //    soundController.PlayOneShot(clickClip);
         //    soundController.StopMusic();
         //}
+        TimeLeft.timeLeft = 30f;
+        FindObjectOfType<PlayerMovement>().health = 100;
+        Lives.PlayerLives = 3;
+        //FindObjectOfType<ScoreScript>().Score = 0;
+
+        FindObjectOfType<InplayUIController>().RestartScene();
+
+        Time.timeScale = 1f;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -88,6 +97,7 @@ public class PauseMenu : MonoBehaviour {
 
         TimeLeft.timeLeft = 30f;
         FindObjectOfType<PlayerMovement>().health = 100;
+        Lives.PlayerLives = 3;
         //FindObjectOfType<ScoreScript>().Score = 0;
         FindObjectOfType<InplayUIController>().RestartScene();
 
