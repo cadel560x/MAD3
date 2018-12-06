@@ -722,6 +722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingPoint: {fileID: 1152290828}
+  medikitClip: {fileID: 8300000, guid: c30edccd96325bd478e7d8d3057bf35c, type: 3}
 --- !u!1 &381799722
 GameObject:
   m_ObjectHideFlags: 0
@@ -1666,6 +1667,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 114970874262280418, guid: 7b5855b82c46bb24d978cfc1a497f247,
+        type: 2}
+      propertyPath: medikitClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c30edccd96325bd478e7d8d3057bf35c, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b5855b82c46bb24d978cfc1a497f247, type: 2}
   m_IsPrefabAsset: 0

@@ -8,6 +8,11 @@ public class GameController : MonoBehaviour {
     public Transform startingPoint;
 
     private InplayUIController inplayUIController;
+    private SoundController soundController;
+
+    [SerializeField]
+    private AudioClip medikitClip;
+
     private PlayerMovement player;
     private ScoreScript scoreScript;
     private int initialScore;
@@ -16,6 +21,7 @@ public class GameController : MonoBehaviour {
     void Start () {
         startingPoint = GameObject.FindGameObjectWithTag("StartingPoint").transform;
         inplayUIController = FindObjectOfType<InplayUIController>();
+        soundController = FindObjectOfType<SoundController>();
         player = FindObjectOfType<PlayerMovement>();
         scoreScript = FindObjectOfType<ScoreScript>();
         initialScore = scoreScript.Score;
@@ -127,6 +133,11 @@ public class GameController : MonoBehaviour {
     {
         if (player.health < 100)
         {
+            if (soundController)
+            {
+                soundController.PlayOneShot(medikitClip);
+            }
+
             player.health = 100;
             inplayUIController.ResetHealtBar();
             Destroy(medikit.gameObject);

@@ -8,6 +8,7 @@ public class Medikit : MonoBehaviour {
     private void Start()
     {
         gameController = FindObjectOfType<GameController>();
+        
     }
 
     //private void OnCollisionEnter2D(Collision2D collision)
