@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 public class SoundController : MonoBehaviour
@@ -19,12 +17,12 @@ public class SoundController : MonoBehaviour
         audioSource.volume = volume;
     }
 
-    void Update()
-    {
+    //void Update()
+    //{
 
         // Setting volume option of Audio Source to be equal to musicVolume
-        audioSource.volume = volume;
-    }
+        //audioSource.volume = volume;
+    //}
 
     // == public methods ==
     public void PlayOneShot(AudioClip clip)
@@ -53,6 +51,7 @@ public class SoundController : MonoBehaviour
     public void SetVolume(float vol)
     {
         volume = vol;
+        audioSource.volume = volume;
     }
 
     public static SoundController FindSoundController()

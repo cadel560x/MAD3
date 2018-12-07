@@ -11,9 +11,9 @@ public class NextLevel : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	//void Update () {
 		
-	}
+	//}
 
     IEnumerator NextLevelTimeout()
     {

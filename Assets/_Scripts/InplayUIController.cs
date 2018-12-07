@@ -1,6 +1,4 @@
-﻿using System;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class InplayUIController : MonoBehaviour {
     public GameObject timeIsUp, gameOver, health, lives, levelCompleted, inplayUI;
@@ -24,10 +22,10 @@ public class InplayUIController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    //void Update () {
         //Time.timeScale = 0;
         //Lives.lives -= 1;
-	}
+	//}
 
     //private void FixedUpdate()
     //{
