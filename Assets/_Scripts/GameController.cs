@@ -128,7 +128,7 @@ public class GameController : MonoBehaviour {
         //DeadPlayer();
         player.GetComponent<PlayerDeath>().enabled = true;
         player.health = 100;
-        scoreScript.Score = 0;
+        //scoreScript.Score = 0;
     }
 
     public void GameOver()
@@ -137,6 +137,7 @@ public class GameController : MonoBehaviour {
         timeLeft.timeLeft = 30f;
         Lives.PlayerLives = 3;
         inplayUIController.GameOver();
+        scoreScript.Score = 0;
     }
 
     public void HealthBoost(Medikit medikit)
