@@ -1,7 +1,9 @@
 # LoRa Gateway AI Framework
 This framework is an interface or tool that allows users to build and use Artificial Intelligence
-models easily on LoRa Gateway, without getting into the depth of the underlying algorithms and runtime environment setup. It's based on Jupyter-Lab Docker container.
-![LoRa AI Architecture](Picture6.png)
+models easily on LoRa Gateway, without getting into the depth of the underlying algorithms and runtime environment setup. It's based on Jupyter-Lab Docker container.  
+
+<img src="Picture6.png" alt="AI Framework" width="400"/> 
+
 The LoRa Gateway AI Framework is based on a layered architecture where each layer depends on the previous layer. There are 7 layers, as follows:
 * Hardware
 * Operating System
